@@ -1,0 +1,32 @@
+<%= form_with(model: phrase, local: true) do |form| %>
+  <% if phrase.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(phrase.errors.count, "error") %> prohibited this phrase from being saved:</h2>
+
+      <ul>
+      <% phrase.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :first_word %>
+    <%= form.text_field :first_word, id: :phrase_first_word %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_word %>
+    <%= form.text_field :last_word, id: :phrase_last_word %>
+  </div>
+
+  <div class="field">
+    <%= form.label :position %>
+    <%= form.number_field :position, id: :phrase_position %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
