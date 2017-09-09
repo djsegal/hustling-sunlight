@@ -14,6 +14,21 @@ require 'rails_helper'
 
 RSpec.describe Phrase, type: :model do
 
+  context 'seed input' do
+    phrase_file = Rails.root.join('db', 'seeds', 'phrases.yml')
+    phrase_list = YAML::load_file(phrase_file)
+
+    phrase_list.shuffle.each do |cur_phrase|
+      cur_test_name = "#{cur_phrase["first_word"]} - #{cur_phrase["last_word"]}"
+
+      it "works for: #{cur_test_name}" do
+        expect {
+          Phrase.create! cur_phrase
+        }.to_not raise_error
+      end
+    end
+  end
+
   context 'manual input' do
 
     it "checks for name presence" do
@@ -48,7 +63,7 @@ RSpec.describe Phrase, type: :model do
 
     it "checks for same characters" do
       expect {
-        Phrase.create!(first_word: "bar", last_word: "baz")
+        Phrase.create!(first_word: "bad", last_word: "bar")
       }.to raise_error(
         ActiveRecord::RecordInvalid,
         "Validation failed: First word must have same letters"
@@ -57,7 +72,7 @@ RSpec.describe Phrase, type: :model do
 
     it "checks for same length words" do
       expect {
-        Phrase.create!(first_word: "moo", last_word: "mooo")
+        Phrase.create!(first_word: "stop", last_word: "stoop")
       }.to raise_error(
         ActiveRecord::RecordInvalid,
         "Validation failed: First word must be same length"
@@ -80,7 +95,7 @@ RSpec.describe Phrase, type: :model do
       expect(cur_phrase.last_word).to eq "comics"
     end
 
-    it "requires unique words", focus: true do
+    it "requires unique words" do
       expect{
         Phrase.create!(first_word: "lame", last_word: "male")
       }.to change{Phrase.count}.from(0).to(1)

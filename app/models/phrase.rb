@@ -21,6 +21,7 @@ class Phrase < ApplicationRecord
   validate :same_letters
   validate :unique_words
   validate :different_word
+  validate :check_spelling
 
   def downcase_words
     self.first_word.downcase! \
@@ -50,6 +51,9 @@ class Phrase < ApplicationRecord
   end
 
   def unique_words
+    return unless \
+      first_word.present? && last_word.present?
+
     not_unique = !Phrase.where(first_word: last_word).empty?
     not_unique |= !Phrase.where(last_word: first_word).empty?
 
@@ -63,6 +67,31 @@ class Phrase < ApplicationRecord
 
     return if first_word != last_word
     errors.add(:first_word, "must be a different word")
+  end
+
+  def check_spelling
+    return unless \
+      first_word.present? && last_word.present?
+
+    has_real_word = [ false, false ]
+
+    [ first_word, last_word ].each_with_index do |cur_word, cur_index|
+      has_real_word[cur_index] ||= !WordNet::Lemma.find_all( @@lemmatizer.lemma(cur_word) ).empty?
+
+      cur_files = [ "words/#{cur_word.chars.first}" ]
+      cur_files += [ "custom", "20k" ]
+
+      cur_files.each do |cur_file|
+        has_real_word[cur_index] ||= \
+          File.foreach("vendor/#{cur_file}.txt").any? {
+            |l| l[cur_word]
+          }
+      end
+
+    end
+
+    return if has_real_word.all?
+    errors.add(:first_word, "has a spelling error")
   end
 
 end

@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+phrase_file = Rails.root.join('db', 'seeds', 'phrases.yml')
+phrase_list = YAML::load_file(phrase_file)
+
+Phrase.create! phrase_list
