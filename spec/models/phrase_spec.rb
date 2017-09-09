@@ -8,6 +8,11 @@
 #  position   :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  slug       :string
+#
+# Indexes
+#
+#  index_phrases_on_slug  (slug) UNIQUE
 #
 
 require 'rails_helper'

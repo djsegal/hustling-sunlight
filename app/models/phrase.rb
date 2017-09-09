@@ -8,6 +8,11 @@
 #  position   :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  slug       :string
+#
+# Indexes
+#
+#  index_phrases_on_slug  (slug) UNIQUE
 #
 
 class Phrase < ApplicationRecord
@@ -22,6 +27,9 @@ class Phrase < ApplicationRecord
   validate :unique_words
   validate :different_word
   validate :check_spelling
+
+  extend FriendlyId
+  friendly_id :slug_candidates, use: :slugged
 
   def downcase_words
     self.first_word.downcase! \
@@ -92,6 +100,12 @@ class Phrase < ApplicationRecord
 
     return if has_real_word.all?
     errors.add(:first_word, "has a spelling error")
+  end
+
+  def slug_candidates
+    [
+      [:first_word, :last_word]
+    ]
   end
 
 end

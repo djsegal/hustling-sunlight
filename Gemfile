@@ -12,6 +12,7 @@ gem 'annotate'
 gem 'pry'
 gem 'rwordnet'
 gem 'lemmatizer'
+gem 'friendly_id'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4.rc1'
