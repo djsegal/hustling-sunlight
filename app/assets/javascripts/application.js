@@ -27,12 +27,14 @@ $(document).ready(function() {
 
 $(document).ready(function() {
   diagonal();
-
-  $.fn.fullpage.setAllowScrolling(false);
+  fixIosHeight();
+  toggleVerticalScroll();
 });
 
 $(window).resize(function() {
   diagonal();
+  fixIosHeight();
+  toggleVerticalScroll();
 
   var wWidth = $(window).width();
 
@@ -59,6 +61,12 @@ $(window).resize(function() {
 
 });
 
+var toggleVerticalScroll = function() {
+  var wWidth = $(window).width();
+
+  $.fn.fullpage.setAllowScrolling( wWidth < 1500 );
+};
+
 var diagonal = function() {
   var wWidth = $(window).width();
   var wHeight = $(window).height();
@@ -70,6 +78,32 @@ var diagonal = function() {
 
   $('.diagonal').css('border-right-width', wWidth);
   $('.diagonal').css('border-top-width', wHeight);
+};
+
+var fixIosHeight = function() {
+
+  var wWidth = $(window).width();
+  var wHeight = $(window).height();
+  var wMin = Math.min(wWidth,wHeight);
+
+  $('.cs-title-card').css("height", wHeight);
+  $('.cs-info-box').css("height", wHeight/2);
+  $('.cs-extra-box').css("height", wHeight/10);
+
+  var curMargin;
+
+  curMargin = wHeight * (25/100);
+  $('.cs-info-box').css("margin-top", curMargin);
+  $('.cs-info-box').css("margin-bottom", curMargin);
+
+  curMargin = wHeight * (75/100) - wMin * (1/100);
+  $('.cs-github-box').css("margin-top", curMargin);
+  $('.cs-github-box').css("margin-bottom", curMargin);
+
+  curMargin = wHeight * (15/100) + wMin * (1/100);
+  $('.cs-book-box').css("margin-top", curMargin);
+  $('.cs-book-box').css("margin-bottom", curMargin);
+
 };
 
 $(document).keydown(function(e) {
@@ -122,6 +156,9 @@ isTriggering = false;
 
 var mousewheelevt = (/Firefox/i.test(navigator.userAgent)) ? "DOMMouseScroll" : "mousewheel" //FF doesn't recognize mousewheel as of FF3.x
 $('html').bind(mousewheelevt, function(e){
+  var wWidth = $(window).width();
+  if ( wWidth < 1500 ) { return; }
+
   if ( isTriggering ) { return; }
   isTriggering = true;
 
