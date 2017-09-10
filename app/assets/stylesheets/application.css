@@ -22,7 +22,7 @@ html {
 }
 
 @media (min-width: 1500px) {
-  .cs-hide-small {
+  .cs-hide-large {
     display: none;
   }
 
@@ -33,7 +33,7 @@ html {
 }
 
 @media (max-width: 1499px) {
-  .cs-hide-large {
+  .cs-hide-small {
     display: none;
   }
 
