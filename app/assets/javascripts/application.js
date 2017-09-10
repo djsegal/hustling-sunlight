@@ -192,8 +192,6 @@ $(document).bind('touchstart', function (e){
 
   var currentX = e.originalEvent.touches[0].clientX;
   lastX = currentX;
-
-  e.preventDefault();
 });
 
 // get movement and scroll the same way
