@@ -1,0 +1,123 @@
+<div id="fullpage">
+
+  <div class="section">
+
+    <div class="slide">
+
+      <div class="cs-title-card">
+
+        <div class="cs-title-name cs-title-name__top">
+          Hustling
+        </div>
+
+        <div class="cs-title-name cs-title-name__bot">
+          Sunlight
+        </div>
+
+        <div class="diagonal">
+        </div>
+
+        <div class="cs-info-box">
+
+          <div class="cs-info-sub-box cs-info-sub-box__top">
+            <div class="cs-info-text">
+              Press
+            </div>
+          </div>
+
+          <div class="cs-info-sub-box cs-info-sub-box__bot">
+            <div class="cs-info-text cs-hide-small">
+              ↑ &amp; ↓
+            </div>
+
+            <div class="cs-info-text cs-hide-large">
+              ← &amp; →
+            </div>
+          </div>
+
+        </div>
+
+        <div class="cs-extra-box cs-book-box">
+
+          <div class="cs-extra-sub-box">
+            <div class="cs-extra-text">
+              <a href="https://www.printedmatter.org/catalog/45806/" target="_blank">
+                <%= fa_icon "shopping-cart
+" %>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="cs-extra-box cs-github-box">
+
+          <div class="cs-extra-sub-box">
+            <div class="cs-extra-text">
+              <a href="https://github.com/djsegal/hustling-sunlight" target="_blank">
+                <%= fa_icon "github" %>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <% Phrase.all.each_with_index do |cur_phrase, cur_index| %>
+
+      <div class="slide <%= (cur_index+1).odd? ? "cs-odd-slide" : "cs-even-slide" %>">
+
+        <div class="cs-box cs-first-box">
+
+          <div class="cs-word cs-first-word">
+            <%= cur_phrase.first_word %>
+          </div>
+
+        </div>
+
+        <div class="cs-box cs-last-box">
+
+          <div class="cs-word cs-last-word">
+            <%= cur_phrase.last_word %>
+          </div>
+
+        </div>
+
+      </div>
+
+    <% end %>
+
+  </div>
+
+  <% Phrase.all.each_with_index do |cur_phrase, cur_index| %>
+
+    <div class="section">
+
+      <div class="slide <%= (cur_index+1).odd? ? "cs-odd-slide" : "cs-even-slide" %>">
+
+        <div class="cs-box cs-first-box">
+
+          <div class="cs-word cs-first-word">
+            <%= cur_phrase.first_word %>
+          </div>
+
+        </div>
+
+        <div class="cs-box cs-last-box">
+
+          <div class="cs-word cs-last-word">
+            <%= cur_phrase.last_word %>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  <% end %>
+
+</div>

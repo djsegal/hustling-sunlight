@@ -1,27 +1,19 @@
-<div id="fullpage">
+<p id="notice"><%= notice %></p>
 
-  <% 5.times do %>
+<p>
+  <strong>First word:</strong>
+  <%= @phrase.first_word %>
+</p>
 
-    <div class="section">
+<p>
+  <strong>Last word:</strong>
+  <%= @phrase.last_word %>
+</p>
 
-      <div class="cs-box cs-first-box">
+<p>
+  <strong>Position:</strong>
+  <%= @phrase.position %>
+</p>
 
-        <div class="cs-word cs-first-word">
-          <%= @phrase.first_word %>
-        </div>
-
-      </div>
-
-      <div class="cs-box cs-last-box">
-
-        <div class="cs-word cs-last-word">
-          <%= @phrase.last_word %>
-        </div>
-
-      </div>
-
-    </div>
-
-  <% end %>
-
-</div>
+<%= link_to 'Edit', edit_phrase_path(@phrase) %> |
+<%= link_to 'Back', phrases_path %>

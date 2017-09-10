@@ -11,12 +11,21 @@
  * It is generally better to create a new file per style scope.
  *
  *= require fullpage
+ *= require font-awesome
  *= require_tree .
  *= require_self
  */
 
+html {
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+}
 
 @media (min-width: 1500px) {
+  .cs-hide-small {
+    display: none;
+  }
+
   .cs-box {
     width: 50vw;
     height: 100vh;
@@ -24,36 +33,204 @@
 }
 
 @media (max-width: 1499px) {
+  .cs-hide-large {
+    display: none;
+  }
+
   .cs-box {
     width: 100vw;
     height: 50vh;
   }
 }
 
+@media (min-width: 1000px) {
+  html {
+    font-size: 700%;
+  }
+}
+
+@media (min-width: 750px) and (max-width: 999px) {
+  html {
+    font-size: 600%;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 749px) {
+  html {
+    font-size: 500%;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 599px) {
+  html {
+    font-size: 400%;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 499px) {
+  html {
+    font-size: 300%;
+  }
+}
+
+@media (max-width: 399px) {
+  html {
+    font-size: 200%;
+  }
+}
 .cs-box {
   display: inline-block;
   text-align: center;
-  font-size: 750%;
-  font-family: 'Raleway', sans-serif;
-  text-transform: uppercase;
 }
 
 .cs-first-box {
   float: left;
-  background-color: black;
-  color: white;
 }
 
 .cs-last-box {
   float: right;
+}
+
+.cs-odd-slide .cs-first-box, .cs-even-slide .cs-last-box {
   background-color: white;
   color: black;
 }
 
+.cs-odd-slide .cs-last-box, .cs-even-slide .cs-first-box {
+  background-color: black;
+  color: white;
+}
+
 .cs-word {
   width: 100%;
-  height: 100%;
+  height: 50%;
   position: relative;
   top: 50%;
   line-height: 0;
+}
+
+.diagonal {
+  position: relative;
+  border-color: black white;
+  border-style: solid;
+  border-width: 0;
+  z-index: -1;
+}
+
+.cs-title-name {
+  position: absolute;
+}
+
+.cs-title-name__top {
+  color: white;
+  top: 5%;
+  left: 10%;
+}
+
+.cs-title-name__bot {
+  color: black;
+  bottom: 5%;
+  right: 10%;
+}
+
+.cs-title-card {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.cs-info-box {
+  position: absolute;
+  top: 0 ;
+  left: 0;
+  margin: 25vh 25vw;
+  width: 50vw;
+  height: 50vh;
+  background-color: lightgrey;
+  color: darkgrey;
+  border: solid 1vmin darkgrey;
+  box-sizing: border-box;
+  border-radius: 10vmin 0 10vmin 0;
+}
+
+.cs-info-sub-box {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  text-align: center;
+}
+
+.cs-info-sub-box__top {
+  top: 0;
+}
+
+.cs-info-sub-box__bot {
+  bottom: 0;
+}
+
+.cs-info-text {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 50%;
+  line-height: 0;
+}
+
+.cs-github-box {
+  margin: calc(75vh - 1vmin) calc(15vw + 1vmin);
+}
+
+.cs-book-box {
+  margin: calc(15vh + 1vmin) calc(75vw - 1vmin);
+}
+
+.cs-extra-box {
+  position: absolute;
+  top: 0 ;
+  left: 0;
+  width: 10vw;
+  height: 10vh;
+  background-color: lightgrey;
+  color: darkgrey;
+  border: solid 1vmin darkgrey;
+  box-sizing: border-box;
+  border-radius: 2vmin 0 2vmin 0;
+}
+
+.cs-extra-sub-box {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.cs-extra-text {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  line-height: 0;
+  font-size: 100%;
+}
+
+.cs-extra-text i {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  line-height: 0;
+  font-size: 50%;
+}
+
+.cs-extra-text a {
+  color: darkgrey;
+}
+
+.cs-extra-text a:hover {
+  color: grey;
 }
