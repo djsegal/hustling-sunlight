@@ -101,6 +101,13 @@ html {
   color: white;
 }
 
+@media (max-width: 1499px) {
+  .cs-even-slide .cs-first-box {
+    border-top: solid 1px black;
+    margin-top: -1px;
+  }
+}
+
 .cs-word {
   width: 100%;
   height: 50%;
