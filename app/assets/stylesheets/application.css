@@ -78,6 +78,13 @@ html {
     font-size: 200%;
   }
 }
+
+@media (max-width: 749px) and (orientation: landscape) {
+  html {
+    font-size: 250% !important;
+  }
+}
+
 .cs-box {
   display: inline-block;
   text-align: center;
