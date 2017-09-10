@@ -28,13 +28,13 @@ $(document).ready(function() {
 $(document).ready(function() {
   diagonal();
   fixIosHeight();
-  toggleVerticalScroll();
+
+  $.fn.fullpage.setAllowScrolling(false);
 });
 
 $(window).resize(function() {
   diagonal();
   fixIosHeight();
-  toggleVerticalScroll();
 
   var wWidth = $(window).width();
 
@@ -60,12 +60,6 @@ $(window).resize(function() {
   }
 
 });
-
-var toggleVerticalScroll = function() {
-  var wWidth = $(window).width();
-
-  $.fn.fullpage.setAllowScrolling( wWidth < 1500 );
-};
 
 var diagonal = function() {
   var wWidth = $(window).width();
@@ -155,18 +149,15 @@ function stealKeys(e, curAction) {
 isTriggering = false;
 
 var mousewheelevt = (/Firefox/i.test(navigator.userAgent)) ? "DOMMouseScroll" : "mousewheel" //FF doesn't recognize mousewheel as of FF3.x
-$('html').bind(mousewheelevt, function(e){
-  var wWidth = $(window).width();
-  if ( wWidth < 1500 ) { return; }
-
+$(document).bind(mousewheelevt, function(e){
   if ( isTriggering ) { return; }
   isTriggering = true;
+
+  var wWidth = $(window).width();
 
   var evt = window.event || e //equalize event object
   evt = evt.originalEvent ? evt.originalEvent : evt; //convert to originalEvent if possible
   var delta = evt.detail ? evt.detail*(-40) : evt.wheelDelta //check for detail first, because it is used by Opera and FF
-
-  var wWidth = $(window).width();
 
   if ( wWidth < 1500 ) {
     if(delta > 0) {
@@ -188,4 +179,62 @@ $('html').bind(mousewheelevt, function(e){
     }
   }
 
+  e.preventDefault();
+});
+
+var lastY;
+var lastX;
+
+// reset touch position on touchstart
+$(document).bind('touchstart', function (e){
+  var currentY = e.originalEvent.touches[0].clientY;
+  lastY = currentY;
+
+  var currentX = e.originalEvent.touches[0].clientX;
+  lastX = currentX;
+
+  e.preventDefault();
+});
+
+// get movement and scroll the same way
+$(document).bind('touchmove', function (e){
+  if ( isTriggering ) { return; }
+  isTriggering = true;
+
+  var wWidth = $(window).width();
+
+  var currentY = e.originalEvent.touches[0].clientY;
+  var deltaY = currentY - lastY;
+
+  var currentX = e.originalEvent.touches[0].clientX;
+  var deltaX = currentX - lastX;
+
+  var delta;
+  if ( Math.abs(deltaX) > Math.abs(deltaY) ) {
+    delta = -deltaX;
+  } else {
+    delta = deltaY;
+  }
+
+  if ( wWidth < 1500 ) {
+    if(delta > 0) {
+      // wheeled up
+      customTrigger("keydown", 38);
+    }
+    else {
+      // wheeled down
+      customTrigger("keydown", 40);
+    }
+  } else {
+    if(delta > 0) {
+      // wheeled up
+      customTrigger("keydown", 37);
+    }
+    else {
+      // wheeled down
+      customTrigger("keydown", 39);
+    }
+  }
+
+  e.preventDefault();
 });
