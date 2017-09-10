@@ -109,7 +109,7 @@ html {
 }
 
 @media (max-width: 1499px) {
-  .cs-even-slide .cs-first-box {
+  .cs-title-card, .cs-even-slide .cs-first-box {
     border-top: solid 1px black;
     margin-top: -1px;
   }
