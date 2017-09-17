@@ -16,6 +16,27 @@
  *= require_self
  */
 
+html, body, .cs-body, .cs-loading {
+  width: 100%;
+  height: 100%;
+}
+
+.cs-body:not(.cs-visible) {
+  visibility:hidden;
+}
+
+.cs-hidden {
+  display: none;
+}
+
+.cs-loading {
+  position: absolute;
+  background-color: black;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
 html {
   font-family: 'Raleway', sans-serif;
   text-transform: uppercase;

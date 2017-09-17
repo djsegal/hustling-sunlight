@@ -1,6 +1,9 @@
 <!DOCTYPE html>
+
 <html>
+
   <head>
+
     <title>HustlingSunlight</title>
 
     <meta charset="utf-8">
@@ -17,9 +20,18 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:700" rel="stylesheet">
+
   </head>
 
   <body>
-    <%= yield %>
+
+    <div class="cs-loading">
+    </div>
+
+    <div class="cs-body">
+      <%= yield %>
+    </div>
+
   </body>
+
 </html>

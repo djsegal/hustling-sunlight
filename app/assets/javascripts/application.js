@@ -18,11 +18,15 @@
 //= require_tree .
 
 $(document).ready(function() {
+  $(".cs-body").addClass("cs-visible");
+
   $('#fullpage').fullpage({
     controlArrows: false,
     continuousVertical: true,
     loopHorizontal: false
   });
+
+  $(".cs-loading").addClass("cs-hidden");
 });
 
 $(document).ready(function() {
