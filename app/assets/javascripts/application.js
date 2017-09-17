@@ -126,13 +126,13 @@ function stealKeys(e, curAction) {
   if ( wWidth < 1500 ) {
     if ( e.which == 37 ) {
       keyCode = 38;
-    } else if ( e.which == 39 ) {
+    } else if ( e.which == 39 || e.which == 32 || e.which == 13 ) {
       keyCode = 40;
     }
   } else {
     if ( e.which == 38 ) {
       keyCode = 37;
-    } else if ( e.which == 40 ) {
+    } else if ( e.which == 40 || e.which == 32 || e.which == 13 ) {
       keyCode = 39;
     }
   }
