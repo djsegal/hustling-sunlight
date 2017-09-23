@@ -64,7 +64,19 @@ html {
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1700px) {
+  html {
+    font-size: 700%;
+  }
+}
+
+@media (min-width: 1500px) and (max-width: 1699px) {
+  html {
+    font-size: 600%;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1499px) {
   html {
     font-size: 700%;
   }
