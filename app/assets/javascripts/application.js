@@ -12,8 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require fullpage/fullpage-continuous-scroll
+//= require fullpage/jquery-fullpage-extensions
 //= require rails-ujs
-//= require fullpage
 //= require turbolinks
 //= require_tree .
 
@@ -23,7 +24,8 @@ $(document).ready(function() {
   $('#fullpage').fullpage({
     controlArrows: false,
     continuousVertical: true,
-    loopHorizontal: false
+    continuousHorizontal: true,
+    continuousHorizontalKey: 'aHVzdGxpbmdzdW5saWdodC54eXpfaGg2WTI5dWRHbHVkVzkxYzBodmNtbDZiMjUwWVd3PTFHQQ=='
   });
 
   $(".cs-loading").addClass("cs-hidden");
