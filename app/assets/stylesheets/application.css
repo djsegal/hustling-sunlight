@@ -27,14 +27,16 @@ html, body, .cs-body, .cs-loading {
 
 .cs-hidden {
   display: none;
+  z-index: -1000 !important;
 }
 
 .cs-loading {
   position: absolute;
   background-color: black;
-  border: 0;
+  border: 0 !important;
   padding: 0;
   margin: 0;
+  z-index: 10;
 }
 
 html {
@@ -142,9 +144,8 @@ html {
 }
 
 @media (max-width: 1499px) {
-  .cs-title-card, .cs-even-slide .cs-first-box {
-    border-top: solid 1px black;
-    margin-top: -1px;
+  .cs-odd-slide .cs-last-box {
+    border-bottom: solid 2vh black;
   }
 }
 
