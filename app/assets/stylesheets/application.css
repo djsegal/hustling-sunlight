@@ -298,3 +298,9 @@ html {
     display: visible;
   }
 }
+
+@media (min-width: 1500px) {
+  .fp-section.fp-table, .fp-slide.fp-table {
+    width: 100vw !important;
+  }
+}
