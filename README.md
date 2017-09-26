@@ -1,24 +1,3 @@
-# README
+[![hustling jpg crop_display](https://user-images.githubusercontent.com/3156114/30878401-98b49c60-a2ca-11e7-9dc6-3932171e79df.jpg)](http://hustlingsunlight.xyz/)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#### based on the book [Hustling Sunlight](https://www.printedmatter.org/catalog/45806/) by Matthew Bakkom
