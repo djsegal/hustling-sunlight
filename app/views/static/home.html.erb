@@ -42,7 +42,7 @@
 
   <% Phrase.all.each_with_index do |cur_phrase, cur_index| %>
 
-    <div class="section">
+    <div class="section <%= (cur_index+1).odd? ? "cs-odd-section" : "cs-even-section" %>">
 
       <div class="slide <%= (cur_index+1).odd? ? "cs-odd-slide" : "cs-even-slide" %>">
 

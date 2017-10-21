@@ -305,3 +305,7 @@ html {
     width: 100vw !important;
   }
 }
+
+.cs-even-section {
+  background-color: black
+}
