@@ -309,3 +309,7 @@ html {
 .cs-even-section {
   background-color: black
 }
+
+.cs-word {
+  pointer-events: none;
+}
