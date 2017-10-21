@@ -242,3 +242,48 @@ $(document).bind('touchmove', function (e){
 
   e.preventDefault();
 });
+
+function getSelectedText() {
+    var text = "";
+    if (typeof window.getSelection != "undefined") {
+        text = window.getSelection().toString();
+    } else if (typeof document.selection != "undefined" && document.selection.type == "Text") {
+        text = document.selection.createRange().text;
+    }
+    return text;
+}
+
+$(document).on( "click", ".js-box", function(e) {
+  if ( getSelectedText() !== "" ) {
+    return;
+  }
+
+  if ( isTriggering ) { return; }
+  isTriggering = true;
+
+  var wWidth = $(window).width();
+
+  var isFirstBox = e.target.classList.contains("cs-first-box");
+
+  if ( wWidth < 1500 ) {
+    if(isFirstBox) {
+      // clicked up
+      customTrigger("keydown", 38);
+    }
+    else {
+      // clicked down
+      customTrigger("keydown", 40);
+    }
+  } else {
+    if(isFirstBox) {
+      // clicked up
+      customTrigger("keydown", 37);
+    }
+    else {
+      // clicked down
+      customTrigger("keydown", 39);
+    }
+  }
+
+  e.preventDefault();
+});
