@@ -287,3 +287,38 @@ $(document).on( "click", ".js-box", function(e) {
 
   e.preventDefault();
 });
+
+$(document).on( "click", ".js-title-arrow", function(e) {
+  if ( getSelectedText() !== "" ) {
+    return;
+  }
+
+  if ( isTriggering ) { return; }
+  isTriggering = true;
+
+  var wWidth = $(window).width();
+
+  var isPrevArrow = e.target.classList.contains("js-prev-arrow");
+
+  if ( wWidth < 1500 ) {
+    if(isPrevArrow) {
+      // clicked up
+      customTrigger("keydown", 38);
+    }
+    else {
+      // clicked down
+      customTrigger("keydown", 40);
+    }
+  } else {
+    if(isPrevArrow) {
+      // clicked up
+      customTrigger("keydown", 37);
+    }
+    else {
+      // clicked down
+      customTrigger("keydown", 39);
+    }
+  }
+
+  e.preventDefault();
+});
