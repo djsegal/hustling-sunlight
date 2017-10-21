@@ -326,3 +326,8 @@ html {
   border: solid 0.5vmin black;
   cursor: pointer;
 }
+
+.cs-title-and {
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
