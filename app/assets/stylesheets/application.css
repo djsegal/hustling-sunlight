@@ -318,6 +318,7 @@ html {
   border-radius: 2vmin 2vmin;
   border: solid 0.5vmin darkgrey;
   transition: background-color 0.25s ease;
+  padding: 0.5vh 0.5vw;
 }
 
 .cs-title-arrow:hover {
