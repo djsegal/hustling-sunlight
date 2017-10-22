@@ -322,3 +322,7 @@ $(document).on( "click", ".js-title-arrow", function(e) {
 
   e.preventDefault();
 });
+
+$(document)[0].addEventListener('mousewheel', function(event) {
+  event.preventDefault();
+});
