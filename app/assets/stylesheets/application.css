@@ -145,13 +145,13 @@ html {
 
 @media (max-width: 1499px) {
   .cs-odd-slide .cs-last-box {
-    border-bottom: solid 49vh black;
+    border-bottom: solid 50vh black;
   }
 }
 
 @media (max-width: 1499px) {
   .cs-even-slide .cs-last-box {
-    border-bottom: solid 49vh white;
+    border-bottom: solid 50vh white;
   }
 }
 
