@@ -83,7 +83,7 @@ var diagonal = function() {
 var fixIosHeight = function() {
 
   var wWidth = $(window).width();
-  var wHeight = $(window).height();
+  var wHeight = $(window).height() + 1;
   var wMin = Math.min(wWidth,wHeight);
 
   $('.cs-title-card').css("height", wHeight);
