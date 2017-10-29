@@ -18,6 +18,8 @@
 //= require turbolinks
 //= require_tree .
 
+defaultWaitTime = 1250;
+
 $(document).ready(function() {
   $(".cs-body").addClass("cs-visible");
 
@@ -106,23 +108,40 @@ var fixIosHeight = function() {
 
 };
 
-$(document).keydown(function(e) {
-  stealKeys(e, "keydown")
+$(document).keypress(function(e) {
+  e.preventDefault();
+  e.stopImmediatePropagation();
+  return false;
 });
 
 $(document).keyup(function(e) {
-  stealKeys(e, "keyup")
+  stealKeys(e, "keyup");
 });
 
-$(document).keypress(function(e) {
-  stealKeys(e, "keypress")
+isHolding = false;
+
+$(document).keydown(function(e) {
+  if (isHolding) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    return false;
+  }
+
+  stealKeys(e, "keydown");
+
+  isHolding = true;
+
+  setTimeout(function(){
+    isHolding = false;
+  }, defaultWaitTime);
 });
 
 function customTrigger(curAction, keyCode) {
   $(document).trigger({ type: curAction, which: keyCode });
+  
   setTimeout(function(){
     isTriggering = false;
-  }, 1250);
+  }, defaultWaitTime);
 }
 
 function stealKeys(e, curAction) {
