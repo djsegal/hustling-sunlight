@@ -54,6 +54,7 @@ html {
   .cs-box {
     width: 50vw;
     height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
   }
 }
 
@@ -65,6 +66,7 @@ html {
   .cs-box {
     width: 100vw;
     height: 50vh;
+    height: calc(var(--vh, 1vh) * 50);
   }
 }
 
@@ -192,6 +194,7 @@ html {
 .cs-title-card {
   width: 100vw;
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   position: absolute;
   top: 0;
   left: 0;
@@ -204,6 +207,7 @@ html {
   margin: 25vh 25vw;
   width: 50vw;
   height: 50vh;
+  height: calc(var(--vh, 1vh) * 50);
   background-color: lightgrey;
   color: darkgrey;
   border: solid 1vmin darkgrey;
