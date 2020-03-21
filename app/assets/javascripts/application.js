@@ -34,6 +34,7 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
+  iosInnerHeight(true);
   diagonal();
   fixIosHeight();
 
@@ -41,6 +42,7 @@ $(document).ready(function() {
 });
 
 $(window).resize(function() {
+  iosInnerHeight(true);
   diagonal();
   fixIosHeight();
 
@@ -71,7 +73,7 @@ $(window).resize(function() {
 
 var diagonal = function() {
   var wWidth = $(window).width();
-  var wHeight = $(window).height();
+  var wHeight = iosInnerHeight();
 
   $('.diagonal').css('left', 0);
   $('.diagonal').css('top', 0);
@@ -85,7 +87,7 @@ var diagonal = function() {
 var fixIosHeight = function() {
 
   var wWidth = $(window).width();
-  var wHeight = $(window).height() + 1;
+  var wHeight = iosInnerHeight() + 1;
   var wMin = Math.min(wWidth,wHeight);
 
   $('.cs-title-card').css("height", wHeight);
@@ -138,7 +140,7 @@ $(document).keydown(function(e) {
 
 function customTrigger(curAction, keyCode) {
   $(document).trigger({ type: curAction, which: keyCode });
-  
+
   setTimeout(function(){
     isTriggering = false;
   }, defaultWaitTime);

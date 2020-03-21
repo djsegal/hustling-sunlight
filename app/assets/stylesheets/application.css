@@ -53,7 +53,7 @@ html {
 
   .cs-box {
     width: 50vw;
-    height: 100vh;
+    height: 100%;
   }
 }
 
@@ -64,7 +64,7 @@ html {
 
   .cs-box {
     width: 100vw;
-    height: 50vh;
+    height: 50%;
   }
 }
 
@@ -147,13 +147,13 @@ html {
 
 @media (max-width: 1499px) {
   .cs-odd-slide .cs-last-box {
-    border-bottom: solid 50vh black;
+    border-bottom: solid 50% black;
   }
 }
 
 @media (max-width: 1499px) {
   .cs-even-slide .cs-last-box {
-    border-bottom: solid 50vh white;
+    border-bottom: solid 50% white;
   }
 }
 
@@ -191,7 +191,7 @@ html {
 
 .cs-title-card {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -201,9 +201,9 @@ html {
   position: absolute;
   top: 0 ;
   left: 0;
-  margin: 25vh 25vw;
+  margin: 25% 25vw;
   width: 50vw;
-  height: 50vh;
+  height: 50%;
   background-color: lightgrey;
   color: darkgrey;
   border: solid 1vmin darkgrey;
@@ -236,11 +236,11 @@ html {
 }
 
 .cs-github-box {
-  margin: calc(75vh - 1vmin) calc(15vw + 1vmin);
+  margin: calc(75% - 1vmin) calc(15vw + 1vmin);
 }
 
 .cs-book-box {
-  margin: calc(15vh + 1vmin) calc(75vw - 1vmin);
+  margin: calc(15% + 1vmin) calc(75vw - 1vmin);
 }
 
 .cs-extra-box {
@@ -248,7 +248,7 @@ html {
   top: 0 ;
   left: 0;
   width: 10vw;
-  height: 10vh;
+  height: 10%;
   background-color: lightgrey;
   color: darkgrey;
   border: solid 1vmin darkgrey;
@@ -326,7 +326,7 @@ html {
   border-radius: 2vmin 2vmin;
   border: solid 0.5vmin darkgrey;
   transition: background-color 0.25s ease;
-  padding: 0.5vh 0.5vw;
+  padding: 0.5% 0.5vw;
 }
 
 .cs-title-arrow:hover {
