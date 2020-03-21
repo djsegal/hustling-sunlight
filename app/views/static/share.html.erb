@@ -1,0 +1,13 @@
+<script>
+  <%
+    phrase_bank = Phrase.all.map {
+      |phrase| "#{phrase.first_word}-#{phrase.last_word}"
+    }
+
+    phrase_index = 1 + phrase_bank.index(params["phrase"])
+  %>
+
+  startIndex = <%= phrase_index %>;
+</script>
+
+<%= render partial: "layouts/slides" %>
