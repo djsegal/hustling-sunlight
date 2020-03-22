@@ -349,3 +349,34 @@ $(document).on( "click", ".js-title-arrow", function(e) {
 $(document)[0].addEventListener('mousewheel', function(event) {
   event.preventDefault();
 });
+
+function copyToClipboard() {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  var tmpText = $(".section.active .slide.active").text().trim().split(/\s+/g).join("-");
+  tmpText = window.location.origin + "/" + tmpText;
+  $temp.val(tmpText).select();
+
+  var wWidth = $(window).width();
+
+  if ( wWidth < 1500 ) {
+    if ( $(".section.active .slide.active .cs-last-box").css("background-color").match(/^(?:white|#fff(?:fff)?|rgba?\(\s*255\s*,\s*255\s*,\s*255\s*(?:,\s*1\s*)?\))$/i) ) {
+      $(".cs-alert-primary").removeClass("cs-zero-opacity")
+    } else {
+      $(".cs-alert-inverse").removeClass("cs-zero-opacity")
+    }
+  } else {
+    if ( $(".section.active .slide.active .cs-first-box").css("background-color").match(/^(?:white|#fff(?:fff)?|rgba?\(\s*255\s*,\s*255\s*,\s*255\s*(?:,\s*1\s*)?\))$/i) ) {
+      $(".cs-alert-primary").removeClass("cs-zero-opacity")
+    } else {
+      $(".cs-alert-inverse").removeClass("cs-zero-opacity")
+    }
+  }
+
+  document.execCommand("copy");
+  $temp.remove();
+
+  setTimeout(function(){
+    $(".cs-alert").addClass("cs-zero-opacity")
+  }, 2.5 * defaultWaitTime);
+}
