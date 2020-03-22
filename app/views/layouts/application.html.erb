@@ -65,6 +65,29 @@
       <%= yield %>
     </div>
 
+    <div class="cs-links">
+      <a onclick="goHome()" class="cs-link">
+        <span class="fa-stack fa-2x">
+          <i class="fa fa-square fa-stack-2x" style="color: #DDDDDD"></i>
+          <i class="fa fa-home fa-stack-1x fa-inverse" style="color: #AAAAAA"></i>
+        </span>
+      </a>
+      <a onclick="copyToClipboard()" class="cs-link">
+        <span class="fa-stack fa-2x">
+          <i class="fa fa-square fa-stack-2x" style="color: #DDDDDD"></i>
+          <i class="fa fa-share-alt fa-stack-1x fa-inverse" style="color: #AAAAAA"></i>
+        </span>
+      </a>
+    </div>
+
+    <div class="cs-alert cs-alert-primary cs-zero-opacity">
+       copied url
+    </div>
+
+    <div class="cs-alert cs-alert-inverse cs-zero-opacity">
+       copied url
+    </div>
+
     <div class="cs-loader diagonal">
       <div class="loader"></div>
     </div>

@@ -335,6 +335,13 @@ html {
   padding-left: 2vw;
   padding-right: 2vw;
 }
+
+.cs-links {
+  position: fixed;
+  top: 1.5vmin;
+  right: 1.5vmin;
+}
+
 .cs-prev {
   position: fixed;
   top: 1.5vmin;
@@ -349,6 +356,75 @@ html {
   right: 1.5vmin;
   font-size: 25%;
   opacity: 0.8;
+}
+
+.cs-text-primary a {
+  color: black;
+}
+
+.cs-text-inverse a {
+  color: white;
+}
+
+#fullpage {
+  opacity: 1.0;
+  transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+}
+
+.cs-loader {
+  opacity: 1.0;
+  transition: opacity 1.25s ease-in-out;
+  -moz-transition: opacity 1.25s ease-in-out;
+  -webkit-transition: opacity 1.25s ease-in-out;
+  -o-transition: opacity 1.25s ease-in-out;
+}
+
+.cs-alert {
+  transition: opacity 0.333s ease-in-out;
+  -moz-transition: opacity 0.333s ease-in-out;
+  -webkit-transition: opacity 0.333s ease-in-out;
+  -o-transition: opacity 0.333s ease-in-out;
+  position: fixed;
+  bottom: 2vmin;
+  left: 2vmin;
+  padding: 2vmin;
+  font-size: initial;
+}
+
+.cs-alert-primary {
+  border: solid 2.5px black;
+  background-color: white;
+  color: black;
+}
+
+.cs-alert-inverse {
+  border: solid 2.5px white;
+  background-color: black;
+  color: white;
+}
+
+.cs-links:not(.js-has-loaded) {
+  opacity: 0;
+}
+
+.cs-links.js-has-loaded {
+  transition: opacity 0.333s ease-in-out;
+  -moz-transition: opacity 0.333s ease-in-out;
+  -webkit-transition: opacity 0.333s ease-in-out;
+  -o-transition: opacity 0.333s ease-in-out;
+}
+
+.cs-link {
+  opacity: 0.825;
+  font-size: initial;
+  vertical-align: top;
+}
+
+.cs-link:hover {
+  opacity: 0.975;
 }
 
 * {
