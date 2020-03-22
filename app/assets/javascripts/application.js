@@ -212,10 +212,15 @@ function refreshGUI() {
     var tmpText = $(".section.active .slide.active").text().trim().split(/\s+/g).join("-");
 
     if ( tmpText.indexOf("Scroll") > -1 && tmpText.indexOf("Scroll") > -1 ) {
-      window.history.replaceState( {} , 'Hustling Sunlight', '/' );
+      curPath = "/";
     } else {
-      window.history.replaceState( {} , 'Hustling Sunlight', '/' + tmpText );
+      curPath = '/' + tmpText;
     }
+
+    window.history.replaceState( {} , 'Hustling Sunlight', curPath );
+
+    ga('set', 'page', curPath);
+    ga('send', 'pageview');
 
     isTriggering = false;
   }, defaultWaitTime);
