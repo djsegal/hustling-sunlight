@@ -184,6 +184,10 @@ $(document).keydown(function(e) {
 function customTrigger(curAction, keyCode) {
   $(document).trigger({ type: curAction, which: keyCode });
 
+  refreshGUI();
+}
+
+function refreshGUI() {
   $(".cs-alert").addClass("cs-zero-opacity");
   $(".cs-prev").addClass("cs-zero-opacity");
   $(".cs-next").addClass("cs-zero-opacity");
@@ -226,12 +230,16 @@ function stealKeys(e, curAction) {
       keyCode = 38;
     } else if ( e.which == 39 || e.which == 32 || e.which == 13 ) {
       keyCode = 40;
+    } else if ( e.which == 38 || e.which == 40 ) {
+      refreshGUI();
     }
   } else {
     if ( e.which == 38 ) {
       keyCode = 37;
     } else if ( e.which == 40 || e.which == 32 || e.which == 13 ) {
       keyCode = 39;
+    } else if ( e.which == 37 || e.which == 39 ) {
+      refreshGUI();
     }
   }
 
