@@ -194,8 +194,12 @@ function customTrigger(curAction, keyCode) {
 
     if ( postSplitClass[2] == 0 && postSplitClass[3] == 0 ) {
       $(".cs-links").addClass("cs-zero-opacity");
-    } else if ( parseInt(preSplitClass[2]) > parseInt(postSplitClass[2]) ) {
-      $(".cs-links").addClass("cs-zero-opacity");
+    } else if ( Math.abs(parseInt(preSplitClass[2]) - parseInt(postSplitClass[2])) > 1 ) {
+      if ( parseInt(postSplitClass[2]) > 1 ) {
+        $(".cs-links").removeClass("cs-zero-opacity");
+      } else {
+        $(".cs-links").addClass("cs-zero-opacity");
+      }
     } else {
       $(".cs-links").removeClass("cs-zero-opacity");
     }
