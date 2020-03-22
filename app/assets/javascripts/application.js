@@ -21,6 +21,12 @@
 defaultWaitTime = 1250;
 
 $(document).ready(function() {
+  iosInnerHeight(true);
+  diagonal();
+  fixIosHeight();
+});
+
+$(document).ready(function() {
   $(".cs-body").addClass("cs-visible");
 
   $('#fullpage').fullpage({
@@ -34,10 +40,6 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-  iosInnerHeight(true);
-  diagonal();
-  fixIosHeight();
-
   $.fn.fullpage.setAllowScrolling(false);
 });
 
