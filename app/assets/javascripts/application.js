@@ -463,7 +463,10 @@ function goHome() {
   setTimeout(function(){
     $('.cs-loader').removeClass('cs-zero-opacity');
     $.fn.fullpage.silentMoveTo(1, 0)
+
     setTimeout(function(){
+      window.history.replaceState( {} , 'Hustling Sunlight', '/' );
+
       $('.cs-loader').addClass('cs-zero-opacity');
       $("#fullpage").removeClass("cs-zero-opacity");
 
