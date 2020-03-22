@@ -21,6 +21,15 @@
 defaultWaitTime = 1250;
 
 $(document).ready(function() {
+  $('#fullpage').fullpage({
+    controlArrows: false,
+    continuousVertical: true,
+    continuousHorizontal: true,
+    continuousHorizontalKey: 'aHVzdGxpbmdzdW5saWdodC54eXpfaGg2WTI5dWRHbHVkVzkxYzBodmNtbDZiMjUwWVd3PTFHQQ=='
+  });
+});
+
+$(document).ready(function() {
   iosInnerHeight(true);
   diagonal();
   fixIosHeight();
@@ -28,13 +37,6 @@ $(document).ready(function() {
 
 $(document).ready(function() {
   $(".cs-body").addClass("cs-visible");
-
-  $('#fullpage').fullpage({
-    controlArrows: false,
-    continuousVertical: true,
-    continuousHorizontal: true,
-    continuousHorizontalKey: 'aHVzdGxpbmdzdW5saWdodC54eXpfaGg2WTI5dWRHbHVkVzkxYzBodmNtbDZiMjUwWVd3PTFHQQ=='
-  });
 
   var wWidth = $(window).width();
 
