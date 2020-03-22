@@ -380,3 +380,27 @@ function copyToClipboard() {
     $(".cs-alert").addClass("cs-zero-opacity")
   }, 2.5 * defaultWaitTime);
 }
+
+function goHome() {
+  $("#fullpage").addClass("cs-zero-opacity");
+  $('.cs-loader').addClass('cs-zero-opacity');
+  $('.cs-loader').removeClass('cs-hidden');
+
+  $('.cs-links').addClass('cs-zero-opacity');
+  $(".cs-alert").addClass("cs-zero-opacity");
+  $(".cs-prev").addClass("cs-zero-opacity");
+  $(".cs-next").addClass("cs-zero-opacity");
+
+  setTimeout(function(){
+    $('.cs-loader').removeClass('cs-zero-opacity');
+    $.fn.fullpage.silentMoveTo(1, 0)
+    setTimeout(function(){
+      $('.cs-loader').addClass('cs-zero-opacity');
+      $("#fullpage").removeClass("cs-zero-opacity");
+
+      setTimeout(function(){
+        $('.cs-loader').addClass('cs-hidden');
+      }, 1.5*defaultWaitTime);
+    }, 1.5*defaultWaitTime);
+  }, 1/2 * defaultWaitTime);
+}
