@@ -340,3 +340,19 @@ html {
   padding-left: 2vw;
   padding-right: 2vw;
 }
+.cs-prev {
+  position: fixed;
+  top: 1.5vmin;
+  left: 1.5vmin;
+  font-size: 25%;
+  opacity: 0.8;
+}
+
+.cs-next {
+  position: fixed;
+  bottom: 1.5vmin;
+  right: 1.5vmin;
+  font-size: 25%;
+  opacity: 0.8;
+}
+

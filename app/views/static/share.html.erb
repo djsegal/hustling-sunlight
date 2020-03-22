@@ -11,3 +11,29 @@
 </script>
 
 <%= render partial: "layouts/slides" %>
+
+<script>
+  function prevButtonClick() {
+    $(".section.active .slide.active .cs-first-box").click();
+  }
+
+  function nextButtonClick() {
+    $(".section.active .slide.active .cs-last-box").click();
+  }
+</script>
+
+<div class="cs-prev cs-text-primary cs-zero-opacity">
+   <a href="#" onclick="prevButtonClick(); return false;">prev</a>
+</div>
+
+<div class="cs-prev cs-text-inverse cs-zero-opacity">
+   <a href="#" onclick="prevButtonClick(); return false;">prev</a>
+</div>
+
+<div class="cs-next cs-text-primary cs-zero-opacity">
+   <a href="#" onclick="nextButtonClick(); return false;">next</a>
+</div>
+
+<div class="cs-next cs-text-inverse cs-zero-opacity">
+   <a href="#" onclick="nextButtonClick(); return false;">next</a>
+</div>
