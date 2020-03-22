@@ -235,11 +235,11 @@ html {
   line-height: 0;
 }
 
-.cs-github-box {
+.cs-book-box {
   margin: calc(75% - 1vmin) calc(15vw + 1vmin);
 }
 
-.cs-book-box {
+.cs-email-box {
   margin: calc(15% + 1vmin) calc(75vw - 1vmin);
 }
 
