@@ -1,3 +1,5 @@
+<%= content_for(:image_url) { params["phrase"] } %>
+
 <script>
   <%
     phrase_bank = Phrase.all.map {
