@@ -206,6 +206,14 @@ function customTrigger(curAction, keyCode) {
       $(".cs-links").removeClass("cs-zero-opacity");
     }
 
+    var tmpText = $(".section.active .slide.active").text().trim().split(/\s+/g).join("-");
+
+    if ( tmpText.indexOf("Scroll") > -1 && tmpText.indexOf("Scroll") > -1 ) {
+      window.history.replaceState( {} , 'Hustling Sunlight', '/' );
+    } else {
+      window.history.replaceState( {} , 'Hustling Sunlight', '/' + tmpText );
+    }
+
     isTriggering = false;
   }, defaultWaitTime);
 }
