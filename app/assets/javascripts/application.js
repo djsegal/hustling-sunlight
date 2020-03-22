@@ -268,7 +268,7 @@ $(document).bind(mousewheelevt, function(e){
     }
   }
 
-  e.preventDefault();
+  e.stopImmediatePropagation();
 });
 
 var lastY;
@@ -407,7 +407,7 @@ $(document).on( "click", ".js-title-arrow", function(e) {
 });
 
 $(document)[0].addEventListener('mousewheel', function(event) {
-  event.preventDefault();
+  event.stopImmediatePropagation();
 });
 
 function copyToClipboard() {
