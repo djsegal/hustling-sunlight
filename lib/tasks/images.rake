@@ -68,6 +68,9 @@ namespace :images do
   desc "TODO"
   task make: :environment do
     Phrase.all.each_with_index do |cur_phrase, cur_index|
+      file_name = "public/#{cur_phrase.first_word}-#{cur_phrase.last_word}.png"
+      next if File.exists? file_name
+
       cur_image = @image_template.deep_dup
 
       cur_image.gsub! "$1", cur_index.even? ? "black" : "white"
