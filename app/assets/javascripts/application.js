@@ -15,7 +15,6 @@
 //= require fullpage/fullpage-continuous-scroll
 //= require fullpage/jquery-fullpage-extensions
 //= require rails-ujs
-//= require turbolinks
 //= require_tree .
 
 defaultWaitTime = 1250;
