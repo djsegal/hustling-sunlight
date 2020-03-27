@@ -347,7 +347,7 @@ html {
   position: fixed;
   top: 1.5vmin;
   left: 1.5vmin;
-  font-size: 25%;
+  font-size: 35%;
   opacity: 0.8;
 }
 
@@ -355,7 +355,7 @@ html {
   position: fixed;
   bottom: 1.5vmin;
   right: 1.5vmin;
-  font-size: 25%;
+  font-size: 35%;
   opacity: 0.8;
 }
 
