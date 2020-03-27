@@ -153,9 +153,20 @@ var fixIosHeight = function() {
 
 };
 
+function disableAutoplay(selfToggle) {
+  if ( selfToggle ) {
+    $(".fa-pause").addClass("fa-play")
+    $(".fa-play").removeClass("fa-pause")
+  }
+
+  clearInterval(playTimer);
+  playTimer = undefined;
+}
+
 $(document).keypress(function(e) {
   e.preventDefault();
   e.stopImmediatePropagation();
+
   return false;
 });
 
@@ -433,6 +444,8 @@ $(document)[0].addEventListener('mousewheel', function(event) {
 });
 
 function copyToClipboard() {
+  disableAutoplay(true);
+
   var $temp = $("<input>");
   $("body").append($temp);
   var tmpText = $(".section.active .slide.active").text().trim().split(/\s+/g).join("-");
@@ -464,6 +477,8 @@ function copyToClipboard() {
 }
 
 function goHome() {
+  disableAutoplay(true);
+
   $("#fullpage").addClass("cs-zero-opacity");
   $('.cs-loader').addClass('cs-zero-opacity');
   $('.cs-loader').removeClass('cs-hidden');
@@ -488,4 +503,21 @@ function goHome() {
       }, 1.5*defaultWaitTime);
     }, 1.5*defaultWaitTime);
   }, 1/2 * defaultWaitTime);
+}
+
+playTimer = undefined;
+
+function togglePlay() {
+  if ( $(".fa-play").length == 1 && $(".fa-pause").length == 0 && playTimer == undefined ) {
+    setTimeout(function(){
+      nextButtonClick()
+      playTimer = setInterval(nextButtonClick, 4000);
+    }, 100);
+  }
+
+  if ( $(".fa-pause").length == 1 && $(".fa-play").length == 0 && playTimer != undefined ) {
+    disableAutoplay();
+  }
+
+  $(".fa-play, .fa-pause").toggleClass("fa-play fa-pause");
 }
