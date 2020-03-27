@@ -498,6 +498,9 @@ function goHome() {
       $('.cs-loader').addClass('cs-zero-opacity');
       $("#fullpage").removeClass("cs-zero-opacity");
 
+      // hack in case they click two buttons quickly
+      $('.cs-links').addClass('cs-zero-opacity');
+
       setTimeout(function(){
         $('.cs-loader').addClass('cs-hidden');
       }, 1.5*defaultWaitTime);
