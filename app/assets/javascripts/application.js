@@ -521,3 +521,11 @@ function togglePlay() {
 
   $(".fa-play, .fa-pause").toggleClass("fa-play fa-pause");
 }
+
+function prevButtonClick() {
+  $(".section.active .slide.active .cs-first-box").click();
+}
+
+function nextButtonClick() {
+  $(".section.active .slide.active .cs-last-box").click();
+}

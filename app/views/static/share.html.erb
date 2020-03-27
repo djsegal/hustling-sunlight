@@ -14,16 +14,6 @@
 
 <%= render partial: "layouts/slides" %>
 
-<script>
-  function prevButtonClick() {
-    $(".section.active .slide.active .cs-first-box").click();
-  }
-
-  function nextButtonClick() {
-    $(".section.active .slide.active .cs-last-box").click();
-  }
-</script>
-
 <div class="cs-prev cs-text-primary cs-zero-opacity">
    <a href="#" onclick="prevButtonClick(); return false;">prev</a>
 </div>
