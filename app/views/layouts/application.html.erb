@@ -65,27 +65,36 @@
       <%= yield %>
     </div>
 
-    <div class="cs-links">
-      <a onclick="goHome()" class="cs-link">
-        <span class="fa-stack fa-2x">
-          <i class="fa fa-square fa-stack-2x" style="color: #DDDDDD"></i>
-          <i class="fa fa-home fa-stack-1x fa-inverse" style="color: #AAAAAA"></i>
-        </span>
-      </a>
-      <a onclick="togglePlay()" class="cs-link">
-        <span class="fa-stack fa-2x">
-          <i class="fa fa-square fa-stack-2x" style="color: #DDDDDD"></i>
-          <i class="fa fa-play fa-stack-1x fa-inverse" style="color: #AAAAAA"></i>
-        </span>
-      </a>
-      <br>
-      <a onclick="copyToClipboard()" class="cs-link" style="float: right; margin-top: 1px;">
-        <span class="fa-stack fa-2x">
-          <i class="fa fa-square fa-stack-2x" style="color: #DDDDDD"></i>
-          <i class="fa fa-share-alt fa-stack-1x fa-inverse" style="color: #AAAAAA"></i>
-        </span>
-      </a>
-    </div>
+    <%
+      buttonDict = {
+        "cs-hide-large" => "fa-lg",
+        "cs-hide-small" => "fa-2x"
+      }
+    %>
+
+    <% buttonDict.each do |cur_key, cur_value| %>
+      <div class="cs-links <%= cur_key %>">
+        <a onclick="goHome()" class="cs-link">
+          <span class="fa-stack <%= cur_value %>">
+            <i class="fa fa-square fa-stack-2x" style="color: #DDDDDD"></i>
+            <i class="fa fa-home fa-stack-1x fa-inverse" style="color: #AAAAAA"></i>
+          </span>
+        </a>
+        <a onclick="togglePlay()" class="cs-link" style="float: right;">
+          <span class="fa-stack <%= cur_value %>">
+            <i class="fa fa-square fa-stack-2x" style="color: #DDDDDD"></i>
+            <i class="fa fa-play fa-stack-1x fa-inverse" style="color: #AAAAAA"></i>
+          </span>
+        </a>
+        <br>
+        <a onclick="copyToClipboard()" class="cs-link" style="float: right; margin-top: 1px;">
+          <span class="fa-stack <%= cur_value %>">
+            <i class="fa fa-square fa-stack-2x" style="color: #DDDDDD"></i>
+            <i class="fa fa-share-alt fa-stack-1x fa-inverse" style="color: #AAAAAA"></i>
+          </span>
+        </a>
+      </div>
+    <% end %>
 
     <div class="cs-alert cs-alert-primary cs-zero-opacity">
        copied url

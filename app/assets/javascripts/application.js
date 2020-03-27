@@ -508,14 +508,14 @@ function goHome() {
 playTimer = undefined;
 
 function togglePlay() {
-  if ( $(".fa-play").length == 1 && $(".fa-pause").length == 0 && playTimer == undefined ) {
+  if ( $(".fa-play").length == 2 && $(".fa-pause").length == 0 && playTimer == undefined ) {
     setTimeout(function(){
       nextButtonClick()
       playTimer = setInterval(nextButtonClick, 4000);
     }, 100);
   }
 
-  if ( $(".fa-pause").length == 1 && $(".fa-play").length == 0 && playTimer != undefined ) {
+  if ( $(".fa-pause").length == 2 && $(".fa-play").length == 0 && playTimer != undefined ) {
     disableAutoplay();
   }
 
