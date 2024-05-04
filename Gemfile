@@ -19,10 +19,9 @@ gem 'jquery-rails'
 gem 'font-awesome-rails'
 gem 'imgkit'
 gem 'wkhtmltoimage-binary'
-gem 'psych', '< 4'
-gem 'sqlite3', '< 2'
-
-gem 'rails', '< 7'
+gem 'psych', '~> 3'
+gem 'sqlite3', '~> 1'
+gem 'rails', '~> 6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 # gem 'rails', '~> 5.1.4.rc1'
