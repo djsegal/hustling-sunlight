@@ -11,7 +11,6 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
 //= require fullpage/fullpage-continuous-scroll
 //= require fullpage/jquery-fullpage-extensions
 //= require rails-ujs
