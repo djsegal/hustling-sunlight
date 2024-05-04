@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.6.4"
+ruby "3.1.2"
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -7,7 +7,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'acts_as_list'
-gem 'factory_girl_rails'
+gem 'factory_bot_rails'
 gem 'rspec-rails'
 gem 'annotate'
 gem 'pry'
@@ -19,9 +19,13 @@ gem 'jquery-rails'
 gem 'font-awesome-rails'
 gem 'imgkit'
 gem 'wkhtmltoimage-binary'
+gem 'psych', '< 4'
+gem 'sqlite3', '< 2'
+
+gem 'rails', '< 7'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.4.rc1'
+# gem 'rails', '~> 5.1.4.rc1'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -51,8 +55,6 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
 end
 
 group :production do

@@ -15,10 +15,10 @@
 #  index_phrases_on_slug  (slug) UNIQUE
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :phrase do
-    first_word "hustling"
-    last_word "sunlight"
-    position 1
+    first_word { "hustling" }
+    last_word { "sunlight" }
+    position { 1 }
   end
 end

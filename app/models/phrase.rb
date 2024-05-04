@@ -84,7 +84,7 @@ class Phrase < ApplicationRecord
     has_real_word = [ false, false ]
 
     [ first_word, last_word ].each_with_index do |cur_word, cur_index|
-      has_real_word[cur_index] ||= !WordNet::Lemma.find_all( @@lemmatizer.lemma(cur_word) ).empty?
+      has_real_word[cur_index] ||= !WordNet::Lemma.find_all( LemmatizerInitializer.lemmatizer.lemma(cur_word) ).empty?
 
       cur_files = [ "words/#{cur_word.chars.first}" ]
       cur_files += [ "custom", "20k" ]
