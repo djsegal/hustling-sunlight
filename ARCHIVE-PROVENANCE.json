@@ -1,0 +1,11 @@
+{
+  "original_tip": "8b3b82658fc79919b3c9c2345c3422a41f113797",
+  "original_branch": "mac-wip/master-20261009-171857-77307-dfe611d1",
+  "purpose": "Historical font-swap experiment only, not active implementation. Original OTF stylesheet link is not a valid font-face declaration. Complete snapshot including PNG variants and font retained on Sandia. Font binary excluded from upload; licensing not established.",
+  "files": {
+    ".ruby-version": "ef538c2810938c03ced86f0380977b308a55b37b",
+    "app/assets/stylesheets/application.css": "726a821552531d3c3c29b9ad9783659e356e0ee4",
+    "app/views/layouts/application.html.erb": "4113658ae03a73147948b2325d5460558a3e486a",
+    "lib/tasks/images.rake": "0e9c85af5c797ba4447139417e960996034798f7"
+  }
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90729526-3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments)};
+      gtag('js', new Date());
+
+      gtag('config', 'UA-90729526-3');
+    </script>
+
+    <title>Hustling Sunlight</title>
+
+    <meta property="og:title" content="Anagrams in B&W" />
+    <meta itemprop="name" content="Anagrams in B&W">
+    <meta name="twitter:title" content="Anagrams in B&W">
+
+    <meta property="og:url" content="http://www.hustlingsunlight.xyz/" />
+    <meta property="og:site_name" content="Hustling Sunlight" />
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="keywords" content="hustling sunlight black white anagrams">
+    <meta name="author" content="ahab io and matt bakkom">
+
+    <meta name="description" content="A long sequence of anagrams in alternating black-against-white, white-against-black text and ground.">
+    <meta itemprop="description" content="A long sequence of anagrams in alternating black-against-white, white-against-black text and ground.">
+    <meta name="twitter:description" content="A long sequence of anagrams in alternating black-against-white, white-against-black text and ground.">
+    <meta property="og:description" content="A long sequence of anagrams in alternating black-against-white, white-against-black text and ground." />
+
+    <meta itemprop="image" content="http://www.hustlingsunlight.xyz/<%= yield(:image_url).blank? ? "hustling-sunlight" : yield(:image_url) %>.png">
+    <meta name="twitter:image:src" content="http://www.hustlingsunlight.xyz/<%= yield(:image_url).blank? ? "hustling-sunlight" : yield(:image_url) %>.png">
+    <meta property="og:image" content="http://www.hustlingsunlight.xyz/<%= yield(:image_url).blank? ? "hustling-sunlight" : yield(:image_url) %>.png" />
+
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link href="/NewsGothicMTPro-Bold.otf" rel="stylesheet">
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-90729526-3', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+  </head>
+
+  <body>
+
+    <div class="cs-body">
+      <%= yield %>
+    </div>
+
+    <%
+      buttonDict = {
+        "cs-hide-large" => "fa-lg",
+        "cs-hide-small" => "fa-2x"
+      }
+    %>
+
+    <% buttonDict.each do |cur_key, cur_value| %>
+      <div class="cs-links <%= cur_key %>">
+        <a onclick="goHome()" class="cs-link">
+          <span class="fa-stack <%= cur_value %>">
+            <i class="fa fa-square fa-stack-2x" style="color: #DDDDDD"></i>
+            <i class="fa fa-home fa-stack-1x fa-inverse" style="color: #AAAAAA"></i>
+          </span>
+        </a>
+        <a onclick="togglePlay()" class="cs-link" style="float: right;">
+          <span class="fa-stack <%= cur_value %>">
+            <i class="fa fa-square fa-stack-2x" style="color: #DDDDDD"></i>
+            <i class="fa fa-play fa-stack-1x fa-inverse" style="color: #AAAAAA"></i>
+          </span>
+        </a>
+        <br>
+        <a onclick="copyToClipboard()" class="cs-link" style="float: right; margin-top: 1px;">
+          <span class="fa-stack <%= cur_value %>">
+            <i class="fa fa-square fa-stack-2x" style="color: #DDDDDD"></i>
+            <i class="fa fa-share-alt fa-stack-1x fa-inverse" style="color: #AAAAAA"></i>
+          </span>
+        </a>
+      </div>
+    <% end %>
+
+    <div class="cs-alert cs-alert-primary cs-zero-opacity">
+       copied url
+    </div>
+
+    <div class="cs-alert cs-alert-inverse cs-zero-opacity">
+       copied url
+    </div>
+
+    <div class="cs-loader diagonal">
+      <div class="loader"></div>
+    </div>
+
+  </body>
+
+</html>

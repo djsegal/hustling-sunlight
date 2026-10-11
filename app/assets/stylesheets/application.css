@@ -1,0 +1,477 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require font-awesome
+ *= require jquery.fullpage
+ *= require_tree .
+ *= require_self
+ */
+
+html, body, .cs-body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.cs-body:not(.cs-visible) {
+  visibility:hidden;
+}
+
+.cs-hidden {
+  display: none;
+  z-index: -1000 !important;
+}
+
+.cs-zero-opacity {
+  opacity: 0 !important;
+}
+
+html {
+  font-family: 'NewsGothicMTPro-Bold', sans-serif;
+  text-transform: uppercase;
+}
+
+@media (min-width: 1500px) {
+  .cs-hide-large {
+    display: none;
+  }
+
+  .cs-box {
+    width: 50vw;
+    height: 100%;
+  }
+}
+
+@media (max-width: 1499px) {
+  .cs-hide-small {
+    display: none;
+  }
+
+  .cs-box {
+    width: 100vw;
+    height: 50%;
+  }
+}
+
+@media (min-width: 1700px) {
+  html {
+    font-size: 700%;
+  }
+}
+
+@media (min-width: 1500px) and (max-width: 1699px) {
+  html {
+    font-size: 600%;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1499px) {
+  html {
+    font-size: 700%;
+  }
+}
+
+@media (min-width: 750px) and (max-width: 999px) {
+  html {
+    font-size: 600%;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 749px) {
+  html {
+    font-size: 500%;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 599px) {
+  html {
+    font-size: 400%;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 499px) {
+  html {
+    font-size: 300%;
+  }
+}
+
+@media (max-width: 399px) {
+  html {
+    font-size: 200%;
+  }
+}
+
+@media (max-width: 749px) and (orientation: landscape) {
+  html {
+    font-size: 250% !important;
+  }
+}
+
+.cs-box {
+  display: inline-block;
+  text-align: center;
+}
+
+.cs-first-box {
+  float: left;
+}
+
+.cs-last-box {
+  float: right;
+}
+
+.cs-odd-slide .cs-first-box, .cs-even-slide .cs-last-box {
+  background-color: white;
+  color: black;
+}
+
+.cs-odd-slide .cs-last-box, .cs-even-slide .cs-first-box {
+  background-color: black;
+  color: white;
+}
+
+@media (max-width: 1499px) {
+  .cs-odd-slide .cs-last-box {
+    border-bottom: solid 1px black;
+  }
+}
+
+@media (max-width: 1499px) {
+  .cs-even-slide .cs-last-box {
+    border-bottom: solid 1px white;
+  }
+}
+
+.cs-word {
+  width: 100%;
+  height: 50%;
+  position: relative;
+  top: 50%;
+  line-height: 0;
+}
+
+.diagonal {
+  position: relative;
+  border-color: black white;
+  border-style: solid;
+  border-width: 0;
+  z-index: -1;
+}
+
+.cs-title-name {
+  position: absolute;
+}
+
+.cs-title-name__top {
+  color: white;
+  top: 5%;
+  left: 10%;
+}
+
+.cs-title-name__bot {
+  color: black;
+  bottom: 5%;
+  right: 10%;
+}
+
+.cs-title-card {
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.cs-info-box {
+  position: absolute;
+  top: 0 ;
+  left: 0;
+  margin: 25% 25vw;
+  width: 50vw;
+  height: 50%;
+  background-color: lightgrey;
+  color: darkgrey;
+  border: solid 1vmin darkgrey;
+  box-sizing: border-box;
+  border-radius: 10vmin 0 10vmin 0;
+}
+
+.cs-info-sub-box {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  text-align: center;
+}
+
+.cs-info-sub-box__top {
+  top: 0;
+}
+
+.cs-info-sub-box__bot {
+  bottom: 0;
+}
+
+.cs-info-text {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 50%;
+  line-height: 0;
+}
+
+.cs-book-box {
+  margin: calc(75% - 1vmin) calc(15vw + 1vmin);
+}
+
+.cs-email-box {
+  margin: calc(15% + 1vmin) calc(75vw - 1vmin);
+}
+
+.cs-extra-box {
+  position: absolute;
+  top: 0 ;
+  left: 0;
+  width: 10vw;
+  height: 10%;
+  background-color: lightgrey;
+  color: darkgrey;
+  border: solid 1vmin darkgrey;
+  box-sizing: border-box;
+  border-radius: 2vmin 0 2vmin 0;
+}
+
+.cs-extra-sub-box {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.cs-extra-text {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  line-height: 0;
+  font-size: 100%;
+}
+
+.cs-extra-text i {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  line-height: 0;
+  font-size: 50%;
+}
+
+.cs-extra-text a {
+  color: darkgrey;
+}
+
+.cs-extra-text a:hover {
+  color: grey;
+}
+
+.cs-scroll-fix {
+  display: hidden;
+}
+
+#fullpage > .section:first-child.cs-first-section.active .fp-slidesContainer > .slide:nth-child(2).cs-first-slide.active {
+  visibility: hidden;
+}
+
+@media (min-width: 1500px) {
+  #fullpage > .section:first-child.cs-first-section.active .cs-scroll-fix {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: visible;
+  }
+}
+
+@media (min-width: 1500px) {
+  .fp-section.fp-table, .fp-slide.fp-table {
+    width: 100vw !important;
+  }
+}
+
+.cs-even-section {
+  background-color: black;
+}
+
+.cs-word {
+  pointer-events: none;
+}
+
+.cs-title-arrow {
+  border-radius: 2vmin 2vmin;
+  border: solid 0.5vmin darkgrey;
+  transition: background-color 0.25s ease;
+  padding: 0.5% 0.5vw;
+}
+
+.cs-title-arrow:hover {
+  color: black;
+  background-color: white;
+  border: solid 0.5vmin black;
+  cursor: pointer;
+}
+
+.cs-title-and {
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
+
+.cs-links {
+  position: fixed;
+  top: 1.5vmin;
+  right: 1.5vmin;
+  font-size: initial;
+}
+
+.cs-prev {
+  position: fixed;
+  top: 1.5vmin;
+  left: 1.5vmin;
+  font-size: 35%;
+  opacity: 0.8;
+}
+
+.cs-next {
+  position: fixed;
+  bottom: 1.5vmin;
+  right: 1.5vmin;
+  font-size: 35%;
+  opacity: 0.8;
+}
+
+.cs-text-primary a {
+  color: black;
+}
+
+.cs-text-inverse a {
+  color: white;
+}
+
+#fullpage {
+  opacity: 1.0;
+  transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+}
+
+.cs-loader {
+  opacity: 1.0;
+  transition: opacity 1.25s ease-in-out;
+  -moz-transition: opacity 1.25s ease-in-out;
+  -webkit-transition: opacity 1.25s ease-in-out;
+  -o-transition: opacity 1.25s ease-in-out;
+}
+
+.cs-alert {
+  transition: opacity 0.333s ease-in-out;
+  -moz-transition: opacity 0.333s ease-in-out;
+  -webkit-transition: opacity 0.333s ease-in-out;
+  -o-transition: opacity 0.333s ease-in-out;
+  position: fixed;
+  bottom: 2vmin;
+  left: 2vmin;
+  padding: 2vmin;
+  font-size: initial;
+}
+
+.cs-alert-primary {
+  border: solid 2.5px black;
+  background-color: white;
+  color: black;
+}
+
+.cs-alert-inverse {
+  border: solid 2.5px white;
+  background-color: black;
+  color: white;
+}
+
+.cs-links:not(.js-has-loaded) {
+  opacity: 0;
+}
+
+.cs-links.js-has-loaded {
+  transition: opacity 0.333s ease-in-out;
+  -moz-transition: opacity 0.333s ease-in-out;
+  -webkit-transition: opacity 0.333s ease-in-out;
+  -o-transition: opacity 0.333s ease-in-out;
+}
+
+.cs-link {
+  opacity: 0.825;
+  font-size: initial;
+  vertical-align: top;
+}
+
+.cs-link:hover {
+  opacity: 0.975;
+}
+
+* {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
+}
+
+.loader {
+  border: 2.5vmin solid lightgrey;
+  border-radius: 50%;
+  border-top: 2.5vmin solid black;
+  border-bottom: 2.5vmin solid white;
+  border-left: 2.5vmin solid black;
+  border-right: 2.5vmin solid white;
+  width: 25vmin;
+  height: 25vmin;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+.cs-loader {
+  position: fixed;
+  height: 0;
+  width: 0;
+  z-index: 10000;
+  text-align: center;
+}
+
+.cs-loader .loader {
+  position: fixed;
+  top: calc(50% - 16vmin);
+  left: calc(50% - 16vmin);
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
